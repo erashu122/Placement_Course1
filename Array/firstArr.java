@@ -17,7 +17,6 @@ public class firstArr {
         System.out.print("The element are : ");
         for (int i = 0; i < s; i++) {
             System.out.print(arr[i]+" ");
-
         }
     }
 }
