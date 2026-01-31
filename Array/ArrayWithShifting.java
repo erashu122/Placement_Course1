@@ -19,7 +19,7 @@ public class ArrayWithShifting {
         }
         obj.deletWithshift(arr,2);
         for (int i = 0; i < arr.length; i++) {
-            System.out.println("Element at index after deletion"+ i+ " is "+arr[i]);
+            System.out.println("Element at index after deletion  "+ i+ " is "+arr[i]);
         }
 
 
