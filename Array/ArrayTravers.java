@@ -10,8 +10,8 @@ public class ArrayTravers {
             System.out.print(arr[i]+" ");
         }
         System.out.println();
-//        obj.sumOfArray(arr);
-//        obj.SumOfEven(arr,n);
+        obj.sumOfArray(arr);
+        obj.SumOfEven(arr,n);
         obj.maxElement(arr,n);
     }
     public void sumOfArray(int[] arr){
