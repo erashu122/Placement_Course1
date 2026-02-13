@@ -1,0 +1,25 @@
+Polymorphism means: One thing behaving in multiple forms.
+
+In Java: A single method or object can behave differently depending on the situation.
+
+🧠 Break the Word
+
+Poly = Many
+Morphism = Forms
+
+So: 👉 Many forms
+
+🔥 Real-Life Example
+Think about a person:
+
+As a Father
+As a Employee
+As a Friend
+
+Same person, different behavior.That is polymorphism.
+
+🟢 Types of Polymorphism in Java
+There are two types:
+
+1️⃣ Compile-time Polymorphism --> (Early binding )(Method Overloading)
+2️⃣ Runtime Polymorphism --> (Late binding ) (Method Overriding)
