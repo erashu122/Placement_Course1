@@ -1,4 +1,4 @@
-package OOPS.FINALKeyWord;
+package OOPS.AccessModifire;
 
 
 class student{
@@ -8,7 +8,7 @@ class student{
     }
 
 }
-public class example1 {
+public class FinalKeyWordExample {
     static void main() {
 
     }

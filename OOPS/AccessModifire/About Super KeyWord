@@ -1,0 +1,139 @@
+🔷 super Keyword in Java
+📌 Definition--->super is a reference variable used to refer to the immediate parent class object.
+
+👉 It is mainly used in inheritance.
+🎯 Why Do We Need super?
+
+When a child class inherits from a parent class:
+Both classes can have same variable names.
+Both can have same method names.
+So how do we access the parent’s version?➡ We use super.
+
+🔑 Uses of super
+
+There are 3 main uses:
+
+1️⃣ To access parent class variable
+2️⃣ To call parent class method
+3️⃣ To call parent class constructor
+
+Let’s understand each properly.
+
+1️⃣ Access Parent Class Variable
+🧠 Problem Situation
+
+If child and parent both have same variable name → child variable hides parent variable.
+
+✅ Example
+class Parent {
+    int x = 10;
+}
+class Child extends Parent {
+    int x = 20;
+    void show() {
+        System.out.println(x);        // Child variable
+        System.out.println(super.x);  // Parent variable
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.show();
+    }
+}
+
+🔍 Output:
+20
+10
+
+Explanation:
+
+x → refers to child class variable.
+
+super.x → refers to parent class variable.
+
+2️⃣ Call Parent Class Method
+
+If child overrides a method but still wants to use parent version → use super.
+
+✅ Example
+class Parent {
+    void display() {
+        System.out.println("Parent Method");
+    }
+}
+class Child extends Parent {
+    void display() {
+        System.out.println("Child Method");
+    }
+    void show() {
+        super.display(); // Calls parent method
+        display();       // Calls child method
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.show();
+    }
+}
+
+🔍 Output:
+Parent Method
+Child Method
+
+3️⃣ Call Parent Class Constructor
+
+Very important 🔥
+
+👉 When child class object is created, parent constructor runs first.
+We can explicitly call parent constructor using super().
+
+✅ Example
+class Parent {
+    Parent() {
+        System.out.println("Parent Constructor");
+    }
+}
+class Child extends Parent {
+    Child() {
+        super();  // Calls parent constructor
+        System.out.println("Child Constructor");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Child obj = new Child();
+    }
+}
+🔍 Output:
+Parent Constructor
+Child Constructor
+
+⚠ Important Rules
+
+✔ super() must be the first statement in constructor.
+✔ If you don’t write super(), Java automatically adds it.
+✔ super cannot be used in static context.
+
+🧠 Real-Life Analogy
+
+Imagine:
+Parent = Father 👨
+Child = Son 👦
+
+If both have same property like house,
+Son’s house = his own house
+Father’s house = super.house
+
+🚨 Common Mistakes
+
+❌ Using super inside static method
+❌ Writing super() not as first statement
+❌ Thinking super creates new object (it does NOT)
+
+🎯 Difference: this vs super
+           this	                ||           super
+Refers to current class object	||  Refers to parent class object
+Access current class variables	||  Access parent class variables
+Call current constructor	    ||  Call parent constructor
