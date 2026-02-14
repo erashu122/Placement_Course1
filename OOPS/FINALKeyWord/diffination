@@ -1,0 +1,113 @@
+🔑 final Keyword in Java
+📌 Definition:-->final is a non-access modifier in Java that is used to restrict modification.
+👉 Once something is declared as final, it cannot be changed.
+
+🎯 Where Can We Use final?
+
+Final Variable
+Final Method
+Final Class
+
+We’ll understand each one clearly.
+
+1️⃣ Final Variable
+📖 Meaning---> If a variable is declared as final, its value cannot be changed once assigned.
+It becomes a constant.
+
+🧠 Real-World Analogy
+
+Think of final variable like your Date of Birth.
+Once fixed → it can’t change.
+
+✅ Syntax
+final int age = 20;
+
+🔍 Example
+class Test {
+    public static void main(String[] args) {
+        final int x = 10;
+        // x = 20;  ❌ Error: cannot change value
+        System.out.println(x);
+    }
+}
+
+🔎 Step-by-step:
+
+final int x = 10; → x is fixed.
+If you try x = 20; → Compile-time error.
+
+Because final variable cannot be reassigned.
+
+⚠ Important Points
+You must initialize final variable once.
+It can be initialized:
+    1. At declaration
+    2. Inside constructor (for instance variables)
+
+2️⃣ Final Method
+📖 Meaning--->If a method is declared as final, it cannot be overridden in subclass.
+
+🧠 Real-Life Example
+
+Imagine a rule made by the principal that cannot be changed by teachers.
+That’s a final method 😄
+
+✅ Syntax
+final void show() {
+    System.out.println("Hello");
+}
+
+🔍 Example
+class Parent {
+    final void display() {
+        System.out.println("Parent Method");
+    }
+}
+class Child extends Parent {
+    // void display() { } ❌ Error: cannot override final method
+}
+
+🔎 Explanation:
+
+display() is final in Parent.
+Child class cannot override it.
+Java gives compile-time error.
+
+3️⃣ Final Class
+📖 Meaning--->If a class is declared as final, it cannot be inherited.
+
+🧠 Real-World Example
+
+Think of it like a sealed box.
+No one can open or extend it.
+
+✅ Syntax
+final class A {
+}
+
+🔍 Example
+final class Animal {
+}
+
+class Dog extends Animal {  // ❌ Error
+}
+
+🔎 Explanation:
+
+Animal is final.
+No class can extend it.
+Compile-time error.
+
+📌 Best Real Example in Java
+String class is final.
+public final class String
+
+Because:
+Java does not want anyone to modify String behavior.
+
+For security & immutability.
+🚀 Common Mistakes Students Make
+
+❌ Trying to change final variable
+❌ Overriding final method
+❌ Extending final class
