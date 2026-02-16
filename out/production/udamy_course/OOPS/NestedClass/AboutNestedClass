@@ -1,0 +1,136 @@
+🔷 Nested Class in Java
+📌 Definition---->A class inside another class is called a Nested Class.
+
+👉 Simply:
+
+class Outer {
+    class Inner {
+    }
+}
+
+🎯 Why Do We Need Nested Class?
+
+To logically group classes.
+Increase encapsulation.
+Improve code readability.
+Useful when inner class is only needed by outer class.
+
+📂 Types of Nested Classes
+
+There are two main types:
+
+1️⃣ Non-Static Nested Class (Inner Class)
+2️⃣ Static Nested Class
+
+And inner classes are further divided into:
+
+Member Inner Class
+Local Inner Class
+Anonymous Inner Class
+We will understand each clearly.
+
+1️⃣ Member Inner Class (Non-Static)
+📖 Definition-->A class declared inside another class without static keyword.
+
+✅ Example
+class Outer {
+    int x = 10;
+
+    class Inner {
+        void show() {
+            System.out.println("Outer x = " + x);
+        }
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Outer obj = new Outer();
+        Outer.Inner in = obj.new Inner();
+        in.show();
+    }
+}
+
+🔎 Important Points
+
+✔ Inner class can access outer class variables (even private).
+✔ Need outer class object to create inner class object.
+
+🧠 Real-Life Analogy
+
+Outer class = Car 🚗
+Inner class = Engine 🔧
+
+Engine cannot exist without Car.
+
+2️⃣ Static Nested Class
+📖 Definition--->A class declared inside another class with static keyword.
+
+✅ Example
+class Outer {
+    static int x = 100;
+
+    static class Inner {
+        void show() {
+            System.out.println("Value = " + x);
+        }
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Outer.Inner obj = new Outer.Inner();
+        obj.show();
+    }
+}
+
+🔎 Important Points
+
+✔ Does NOT need outer class object.
+✔ Can access only static members of outer class.
+
+🧠 Analogy
+
+Static nested class is like a separate department inside company,
+but it doesn’t need company owner object.
+
+3️⃣ Local Inner Class
+
+Declared inside a method.
+
+✅ Example
+class Outer {
+    void display() {
+
+        class Inner {
+            void show() {
+                System.out.println("Inside method");
+            }
+        }
+
+        Inner obj = new Inner();
+        obj.show();
+    }
+}
+
+🔎 Rule
+
+Can access final or effectively final local variables.
+
+4️⃣ Anonymous Inner Class
+
+Class without name.Used when we want to override method quickly.
+
+✅ Example
+class Test {
+    public static void main(String[] args) {
+
+        Runnable obj = new Runnable() {
+            public void run() {
+                System.out.println("Anonymous Class");
+            }
+        };
+
+        obj.run();
+    }
+}
