@@ -1,6 +1,6 @@
-package COURSE;
+package COURSE.Recursion;
 
-public class RecursionExample1 {
+public class RecursionExampleFectorial {
 
     static int factorial(int n){
         if (n==0){    //Base Case

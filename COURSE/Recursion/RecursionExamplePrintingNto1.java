@@ -1,6 +1,6 @@
-package COURSE;
+package COURSE.Recursion;
 
-public class RecursionExample2 {
+public class RecursionExamplePrintingNto1 {
 
     static void PrintNumber(int n){
         if (n==0){
