@@ -1,0 +1,151 @@
+🔷 Generics in Java
+📌 Definition
+
+Generics allow us to write a class, interface, or method that can work with different data types in a type-safe way.
+
+👉 It means:
+You can create a class that works with Integer, String, Double, etc.
+Without rewriting the code again and again.
+
+🎯 Why Do We Need Generics?
+
+Before Generics (Java 1.5):
+
+We used:
+
+ArrayList list = new ArrayList();
+list.add("Hello");
+list.add(10);
+
+
+Now problem is:
+
+Mixed data types.
+
+Need typecasting.
+
+Compile-time safety is not there.
+
+❌ Without Generics Problem
+ArrayList list = new ArrayList();
+list.add("Bitu");
+
+String name = (String) list.get(0);
+
+
+You must typecast → risky 😓
+If wrong casting → Runtime Error.
+
+✅ With Generics
+ArrayList<String> list = new ArrayList<>();
+list.add("Bitu");
+
+String name = list.get(0);
+
+
+✔ No typecasting needed
+✔ Compile-time checking
+✔ Type safety
+
+🧠 Real-Life Analogy
+
+Think of Generics like a lunch box with label:
+
+If label says "Rice" 🍚 → Only rice allowed
+
+If label says "Fruits" 🍎 → Only fruits allowed
+
+No mixing!
+
+Same:
+
+ArrayList<String>
+ArrayList<Integer>
+
+🔑 Generic Class
+✅ Syntax
+class Box<T> {
+    T value;
+
+    void setValue(T value) {
+        this.value = value;
+    }
+
+    T getValue() {
+        return value;
+    }
+}
+
+🔍 Use It
+public class Test {
+    public static void main(String[] args) {
+        Box<Integer> obj = new Box<>();
+
+        obj.setValue(100);
+        System.out.println(obj.getValue());
+    }
+}
+
+🔎 Step-by-Step
+
+<T> → Type parameter
+
+T acts like placeholder
+
+At runtime → replaced with actual type
+
+🔑 Generic Method
+
+You can also make methods generic.
+
+✅ Example
+class Test {
+
+    public static <T> void display(T data) {
+        System.out.println(data);
+    }
+
+    public static void main(String[] args) {
+        display(10);
+        display("Bitu");
+        display(3.14);
+    }
+}
+
+🔑 Multiple Type Parameters
+class Pair<T, U> {
+    T first;
+    U second;
+}
+
+
+Use:
+
+Pair<String, Integer> p = new Pair<>();
+
+⚠ Important Points
+
+✔ Generics work only with Objects
+❌ Not with primitive types
+
+Wrong:
+
+ArrayList<int>
+
+
+Correct:
+
+ArrayList<Integer>
+
+🚨 Common Mistakes
+
+❌ Using primitive data types
+❌ Forgetting < >
+❌ Mixing raw types with generic types
+
+📌 Advantages
+
+✔ Type Safety
+✔ No Typecasting
+✔ Code Reusability
+✔ Compile-time Error Checking
