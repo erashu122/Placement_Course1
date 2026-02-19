@@ -13,9 +13,29 @@ public class MyGenerics {
         Displayer<Integer> obj2=new Displayer();
         obj2.setNum(20);
         obj2.display();
+
+        Displayer<Double> obj=new Displayer();
+        obj.setNum(20.0);
+        obj.display();
+
+        Displaye ob=new Displaye(); //but it have not type safty
+        ob.setNum(20.0);
+        ob.display();
+        ob.setNum(30);
+        ob.display();
     }
 
 }
+class Displaye{
+    Object num;
+    public void setNum(Object num){
+        this.num=num;
+    }
+    public void display(){
+        System.out.println("element ->"+this.num);
+    }
+}
+
 class Displayer<T>{
     T num;
     public void setNum(T num){
@@ -25,6 +45,8 @@ class Displayer<T>{
         System.out.println("element ->"+this.num);
     }
 }
+
+
 //class IntegerDisplayer{
 //    Integer num;
 //
