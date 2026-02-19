@@ -7,7 +7,7 @@ public class PrimeNumber {
         if (n<=1){
             return false;
         }
-        if (n==i){
+        if (i*i>n){
             return true;
         }
         if (n%i==0){
