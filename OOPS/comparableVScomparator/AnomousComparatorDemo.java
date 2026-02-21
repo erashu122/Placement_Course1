@@ -1,6 +1,6 @@
 package OOPS.comparableVScomparator;
 
-import java.sql.SQLOutput;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
