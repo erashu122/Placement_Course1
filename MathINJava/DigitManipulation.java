@@ -15,7 +15,18 @@ public class DigitManipulation {
         System.out.println("Number of Digit :"+res);
     }
 
+    // with modulus
     public void FindDigitsUsingDivision(int num){
+        if (num<0){
+            num=num*-1;
+        }
+        try{
+            if (num==0){
+                System.out.println("Enter the spasfic number !");
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
         int count=0;
         while(num>0){
             num=num/10;
@@ -23,8 +34,16 @@ public class DigitManipulation {
         }
         System.out.println("Number of digit :"+count);
     }
+
+    //append the digit
+    public void AppendDigit(int num,int digit){
+        int append=num*10+digit;
+        System.out.println("your number after the append digit :"+append);
+    }
     static void main() {
         DigitManipulation di=new DigitManipulation();
-        di.findDigitUsingFormula(0);
+//        di.findDigitUsingFormula(0);
+//        di.FindDigitsUsingDivision(0);
+        di.AppendDigit(12345,3);
     }
 }
