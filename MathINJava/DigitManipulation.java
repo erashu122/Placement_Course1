@@ -40,10 +40,33 @@ public class DigitManipulation {
         int append=num*10+digit;
         System.out.println("your number after the append digit :"+append);
     }
+    //when the digit is mor then one digit
+    public void AppendDigitMoreThen1(int num,int digit){
+        boolean isNeg=false;
+        if (num<0){
+            isNeg=true;
+            num=-1*num;
+        }
+        int d=1;
+        int temp=digit;
+        while (temp>0){
+            temp/=10;
+            d=d*10;
+        }
+
+        int append=num*d+digit;
+        if (isNeg){
+            append=-1*append;
+        }
+        System.out.println("your number after the append digit :"+append);
+
+
+    }
     static void main() {
         DigitManipulation di=new DigitManipulation();
 //        di.findDigitUsingFormula(0);
 //        di.FindDigitsUsingDivision(0);
-        di.AppendDigit(12345,3);
+//        di.AppendDigit(12345,3);
+        di.AppendDigitMoreThen1(-123,0);
     }
 }
