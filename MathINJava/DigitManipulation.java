@@ -62,11 +62,20 @@ public class DigitManipulation {
 
 
     }
+
+    //insert at front of the number
+    public void InsertAtFront(int num,int digit){
+        int digits=(int)Math.log10(num)+1;
+        int insert=digit*(int)Math.pow(10,digits)+num;
+        System.out.println(insert);
+
+    }
     static void main() {
         DigitManipulation di=new DigitManipulation();
 //        di.findDigitUsingFormula(0);
 //        di.FindDigitsUsingDivision(0);
 //        di.AppendDigit(12345,3);
-        di.AppendDigitMoreThen1(-123,0);
+//        di.AppendDigitMoreThen1(-123,12);
+        di.InsertAtFront(1234,99);
     }
 }
