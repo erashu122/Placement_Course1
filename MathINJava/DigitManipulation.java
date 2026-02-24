@@ -76,13 +76,30 @@ public class DigitManipulation {
     }
 
     public  void ReverseNumber(int num){
+        if (num==0){
+            System.out.println("Reverse :"+num);
+        }
         int res=0;
+        boolean isNeg=false;
+
+        if (num<0){
+            isNeg=true;
+            num=-1*num;
+        }
         while (num>0){
              int digit=num%10;
             res=res*10+digit;
             num=num/10;
         }
-        System.out.println(res);
+        if (isNeg){
+            res=-1*res;
+        }
+        System.out.println("Reverse :"+res);
+    }
+    public void CheckOddEven(int num){
+        if (num%2==0){
+            System.out.println(num+" is even number");
+        }else System.out.println(num +" is Odd number");
     }
     static void main() {
         DigitManipulation di=new DigitManipulation();
@@ -91,6 +108,8 @@ public class DigitManipulation {
 //        di.AppendDigit(12345,3);
 //        di.AppendDigitMoreThen1(-123,12);
 //        di.InsertAtFront(0,3);
-        di.ReverseNumber(1234);
+        di.ReverseNumber(-1234);
+        di.CheckOddEven(0);
+
     }
 }
