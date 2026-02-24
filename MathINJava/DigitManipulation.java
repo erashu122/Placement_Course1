@@ -65,10 +65,24 @@ public class DigitManipulation {
 
     //insert at front of the number
     public void InsertAtFront(int num,int digit){
-        int digits=(int)Math.log10(num)+1;
+        int digits=1;
+        if (num > 0) {
+            digits=(int)Math.log10(num)+1;
+        }
+
         int insert=digit*(int)Math.pow(10,digits)+num;
         System.out.println(insert);
 
+    }
+
+    public  void ReverseNumber(int num){
+        int res=0;
+        while (num>0){
+             int digit=num%10;
+            res=res*10+digit;
+            num=num/10;
+        }
+        System.out.println(res);
     }
     static void main() {
         DigitManipulation di=new DigitManipulation();
@@ -76,6 +90,7 @@ public class DigitManipulation {
 //        di.FindDigitsUsingDivision(0);
 //        di.AppendDigit(12345,3);
 //        di.AppendDigitMoreThen1(-123,12);
-        di.InsertAtFront(1234,99);
+//        di.InsertAtFront(0,3);
+        di.ReverseNumber(1234);
     }
 }
